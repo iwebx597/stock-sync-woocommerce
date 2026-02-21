@@ -1,0 +1,221 @@
+/**
+ * Stock Sync Admin Styles
+ * 
+ * CSS สำหรับ Admin Dashboard
+ */
+
+.wrap {
+    margin: 20px;
+}
+
+.wrap h1 {
+    margin-bottom: 20px;
+    color: #1d2327;
+}
+
+.wrap h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1d2327;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.wrap p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.wrap .form-table {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.wrap .form-table th {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+.wrap .form-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.wrap .form-table input[type="url"],
+.wrap .form-table input[type="password"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.wrap .form-table input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.wrap .form-table .description {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 13px;
+}
+
+.wrap .button {
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.wrap .button:hover {
+    background: #e8e8e8;
+    border-color: #999;
+}
+
+.wrap .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.wrap .button.button-primary {
+    background: #0073aa;
+    color: white;
+    border-color: #0073aa;
+}
+
+.wrap .button.button-primary:hover:not(:disabled) {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+.wrap .button.button-primary:disabled {
+    opacity: 0.7;
+}
+
+/* Result Messages */
+#ssw-result {
+    margin-top: 20px;
+}
+
+.wrap .notice {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-left: 4px solid #0073aa;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.wrap .notice.notice-success {
+    border-left-color: #28a745;
+}
+
+.wrap .notice.notice-error {
+    border-left-color: #dc3545;
+}
+
+.wrap .notice.notice-info {
+    border-left-color: #0073aa;
+}
+
+.wrap .notice p {
+    margin: 0;
+    color: #1d2327;
+}
+
+.wrap .notice.notice-success p {
+    color: #155724;
+}
+
+.wrap .notice.notice-error p {
+    color: #721c24;
+}
+
+/* Tables */
+.wrap .widefat {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    background: white;
+}
+
+.wrap .widefat thead {
+    background: #f5f5f5;
+}
+
+.wrap .widefat th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    color: #333;
+}
+
+.wrap .widefat td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+.wrap .widefat tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.wrap .widefat code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #333;
+}
+
+.wrap .widefat strong {
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* Status Table */
+.wrap .widefat.status-table td {
+    vertical-align: middle;
+}
+
+/* HR */
+.wrap hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+    height: 0;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .wrap .form-table input[type="url"],
+    .wrap .form-table input[type="password"] {
+        max-width: 100%;
+    }
+    
+    .wrap .button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .wrap .widefat {
+        font-size: 12px;
+    }
+    
+    .wrap .widefat th,
+    .wrap .widefat td {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,44 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore WordPress
+wp-config.php
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-*
+wp-content/debug.log
+
+# Ignore Plugin logs
+/uploads/ssw-logs.txt
+
+# Ignore Node modules (if using npm/webpack)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Ignore build files
+/dist/
+/build/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+
+# Composer
+composer.lock
+vendor/
+
+# Ignore local dev files
+.env
+.env.local
+debug.log
