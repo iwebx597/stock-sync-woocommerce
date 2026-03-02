@@ -29,7 +29,7 @@
 - ทุกไฟล์ PHP มี `if (!defined('ABSPATH')) exit;` ป้องกัน direct access
 - Admin functions ตรวจสอบ `current_user_can('manage_woocommerce')`
 - Log read/delete ตรวจสอบ capability ก่อน return ข้อมูล
-- mock-api.php บล็อกโดย default — อนุญาตเฉพาะเมื่อ `WP_DEBUG=true`
+- ไม่มี mock/test endpoints ใน production code
 
 ### 2. CSRF Protection
 - ใช้ nonce แยกต่างหากสำหรับแต่ละ action (`ssw_test_connection_nonce`, `ssw_manual_sync_nonce`)

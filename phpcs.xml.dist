@@ -59,14 +59,6 @@
 	     Project-specific Exclusions
 	     ============================================ -->
 
-	<!-- mock-api.php is standalone PHP for testing — allow native functions -->
-	<rule ref="WordPress.Security.ValidatedSanitizedInput">
-		<exclude-pattern>mock-api.php</exclude-pattern>
-	</rule>
-	<rule ref="WordPress.WP.AlternativeFunctions">
-		<exclude-pattern>mock-api.php</exclude-pattern>
-	</rule>
-
 	<!-- Allow file_put_contents in Logger bootstrap (creates .htaccess/index.php) -->
 	<rule ref="WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents">
 		<exclude-pattern>includes/class-logger.php</exclude-pattern>

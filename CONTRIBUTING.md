@@ -213,13 +213,10 @@ stock-sync-woocommerce/
 ├── assets/
 │   ├── css/admin.css               ← Styles
 │   └── js/admin.js                 ← Scripts
-├── classes/                         ← Old structure
-├── docs/
-│   ├── README.md
-│   ├── INSTALLATION.md
-│   ├── API-SPECIFICATION.md
-│   ├── TROUBLESHOOTING.md
-│   └── CHANGELOG.md
+├── classes/                         ← Base classes
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── SECURITY.md
 └── .gitignore
 ```
 
