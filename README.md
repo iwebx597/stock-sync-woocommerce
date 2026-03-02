@@ -56,6 +56,41 @@ stock-sync-woocommerce/
 2. เปิดใช้งานปลักอิน
 3. ไปที่ WooCommerce → Stock Sync → ตั้งค่า settings
 
+## ความปลอดภัย (Security Features)
+
+ปลักอินนี้ได้รับการออกแบบด้วยวิธีการรักษาความปลอดภัยระดับสูง:
+
+### 🔐 การป้องกันการโจมตีทั่วไป
+
+| ภัยคุกคาม | มาตรการป้องกัน |
+|---|---|
+| **XSS (Cross-Site Scripting)** | ✅ Escape all HTML output (`esc_html`, `esc_attr`, `esc_url`), multibyte-safe truncation (`mb_strimwidth`) |
+| **CSRF (Cross-Site Request Forgery)** | ✅ Action-specific nonces, capability checks ทุก form/AJAX |
+| **SQL Injection** | ✅ `$wpdb->prepare()` กับ placeholders, ไม่มี dynamic SQL |
+| **Access Control** | ✅ `manage_woocommerce` capability checks ทุกจุด, mock-api บล็อกใน production |
+| **SSRF (Server-Side Request Forgery)** | ✅ Private IP whitelist, scheme validation, redirection limit = 3 |
+| **File Upload / RCE** | ✅ Extension whitelist (jpg/png/gif/webp only), MIME type validation, `sanitize_file_name` |
+| **Data Poisoning** | ✅ Stock ≥ 0, price ≥ 0, input validation จาก external API |
+| **Secret Leakage** | ✅ API key/secret masked ในการแสดง (เฉพาะ 4 ตัวท้าย), log redaction |
+
+### ⚙️ ความแข็งแกร่งของระบบ
+
+| ฟีเจอร์ | รายละเอียด |
+|---|---|
+| **Cron Lock / Overlap Prevention** | ✅ Transient-based lock กัน concurrent runs (TTL 10-30 นาที) |
+| **API Retry & Backoff** | ✅ Exponential backoff (2s→4s→8s), auto-retry สำหรับ 429/500/502/503 |
+| **Timeout Protection** | ✅ HTTP requests 30s timeout, redirection ≤ 3 hops, image download 30s |
+| **Rate Limiting Respect** | ✅ ทำให้ honor `Retry-After` header จาก API (≤ 60s) |
+| **Infinite Loop Protection** | ✅ Max 200 pages per sync, max 100 batches (จำกัด pagination loop) |
+| **Log File Protection** | ✅ `.htaccess` deny all (Apache), `index.php` prevention (directory listing), hashed filename |
+| **Timezone Handling** | ✅ ใช้ `gmdate()` เพื่อความสอดคล้องของ timestamp |
+
+### 📋 มาตรฐานและการตรวจสอบ
+
+- ✅ ถูกต้องตามมาตรฐาน **WordPress Coding Standards** (WPCS)
+- ✅ **PHPCS Configuration** อยู่ที่ `phpcs.xml.dist` (รวมกฎ security)
+- ✅ ดูรายละเอียดเพิ่มเติมใน **[SECURITY.md](SECURITY.md)**
+
 ## การตั้งค่า
 
 ### ขั้นตอนที่ 1: ตั้งค่า API Connection
